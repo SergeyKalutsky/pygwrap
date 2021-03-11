@@ -1,0 +1,20 @@
+
+
+# Инициализация
+pg.init()
+clock = pg.time.Clock()
+screen = pg.display.set_mode((WIDTH, HEIGHT))
+FPS = 60
+running = True
+while running:
+    for i in pg.event.get():
+        if i.type == pg.QUIT:
+            running = False
+        events(i)
+
+    updates()
+    draw(screen)
+    pg.display.update()
+
+    clock.tick(FPS)
+pg.quit()

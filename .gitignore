@@ -1,0 +1,6 @@
+__pycache__
+data
+app/app/static/files
+*.pyc
+acme.json
+app/app/static/cworks_data

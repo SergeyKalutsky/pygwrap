@@ -1,0 +1,23 @@
+import pygame as pg
+import random
+
+
+class WrappedRect:
+    def __init__(self, color, x, y, H, W):
+        self.color = color
+        self.x = x
+        self.y = y
+        self.H = H
+        self.W = W
+        self.rect = self._make_rect_obj()
+
+    def _make_rect_obj(self):
+        return pg.Rect(self.x, self.y, self.H, self.W)
+
+    def draw(self, screen):
+        self.rect = self._make_rect_obj()
+        pg.draw.rect(screen, self.color, self.rect)
+
+    def colliderect(self, wrect):
+        return self.rect.colliderect(wrect.rect)
+
